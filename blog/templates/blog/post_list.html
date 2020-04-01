@@ -8,17 +8,20 @@
         </div>
 
         {% for post in posts %}
-        <div>
-            <p>published: 31.03.2020, 22:13</p>
-            <h2><a href="">{{My first post}}</a></h2>
-            <p>{{Hi there ! As this is the blog created by me. I warmly welcome you all to my blog. Thank you}}</p>
-        </div>
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
         {% endfor %}
 
-        <div>
-            <p>published: 31.03.2020, 22:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>I have completed my Bachelor of Engineering iin Industrial Engineering branch from SRKNEC College, Nagpur.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+
     </body>
 </html>
